@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useFetchJobs from './useFetchJobs'
-import { Container } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
 import Job from './Job'
 import JobsPagination from './JobsPagination';
 import SearchForm from './SearchForm';
@@ -20,12 +20,12 @@ function App() {
   }
 
   return (
-    <Container className="my-4">
-      <h1 className="mb-4">GitHub Jobs</h1>
+    <Container className="my-4 bg-dark">
+      <h1 className="mb-4 text-white">GitHub Jobs</h1>
       <SearchForm params={params} onParamChange={handleParamChange} />
       <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>Error. Try Refreshing.</h1>}
+      {loading && <h1 className="text-white">Loading...</h1>}
+      {error && <h1 className="text-white">Error. Try Refreshing.</h1>}
       {jobs.map(job => {
         return <Job key={job.id} job={job} />
       })}

@@ -8,7 +8,7 @@ export default function JobsPagination({ page, setPage, hasNextPage }) {
 
   return (
     <Pagination>
-      {page !== 1 && <Pagination.Prev onClick={() => adjustPage(-1)} />}
+      {page !== 1 && <Pagination.Prev className="bg-warnings" onClick={() => adjustPage(-1)} />}
       {page !== 1 && <Pagination.Item onClick={() => setPage(1)}>1</Pagination.Item>}
       {page > 2 && <Pagination.Ellipsis />}
       {page > 2 && <Pagination.Item onClick={() => adjustPage(-1)}>{page - 1}</Pagination.Item>}

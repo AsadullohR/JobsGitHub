@@ -6,7 +6,8 @@ export default function Job({ job }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <Card className="mb-3">
+      
+    <Card className="mb-3" color="#ffeb3b"> 
       <Card.Body>
         <div className="d-flex justify-content-between">
           <div>
