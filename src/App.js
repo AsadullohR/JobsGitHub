@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useFetchJobs from './useFetchJobs'
-import { Container} from 'react-bootstrap'
+import { Button, Container} from 'react-bootstrap'
 import Job from './Job'
 import JobsPagination from './JobsPagination';
 import SearchForm from './SearchForm';
@@ -9,6 +9,7 @@ function App() {
   const [params, setParams] = useState({})
   const [page, setPage] = useState(1)
   const { jobs, loading, error, hasNextPage } = useFetchJobs(params, page)
+
 
   function handleParamChange(e) {
     const param = e.target.name
@@ -20,8 +21,8 @@ function App() {
   }
 
   return (
-    <Container className="my-4 bg-dark">
-      <h1 className="mb-4 text-white">GitHub Jobs</h1>
+    <Container className="my-4" style= {{backgroundColor: "rgb(21, 32, 43)"}}>
+      <h1 className="mb-4 text-white">DevJobs</h1>
       <SearchForm params={params} onParamChange={handleParamChange} />
       <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
       {loading && <h1 className="text-white">Loading...</h1>}
